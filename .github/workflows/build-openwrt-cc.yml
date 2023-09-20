@@ -4,9 +4,9 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-# https://github.com/P3TERX/Actions-OpenWrt
+# https://githubfast.com/P3TERX/Actions-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
-# https://github.com/liwenjie119/Actions-OpenWrt
+# https://githubfast.com/liwenjie119/Actions-OpenWrt
 
 name: Build OpenWrt-cc
 
@@ -26,7 +26,7 @@ on:
         default: 'false'
         
   schedule:
-    - cron: 0 8 * * 3,5
+  #  - cron: 0 8 * * 3,5
   watch:
     types: started
   push:
@@ -36,7 +36,7 @@ on:
       - '.github/workflows/build-openwrt-cc.yml'
       
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://githubfast.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   DIY_P1_SH: diy.sh
@@ -135,7 +135,7 @@ jobs:
         DateTime=`date -R`
         sed -i "746 a \\\t\t<tr><td width="33%">编译时间<\/td><td>$DateTime<\/td><\/tr>" package/lean/autocore/files/x86/index.htm
         sed -i "709 a \\\t\t<tr><td width="33%">编译时间<\/td><td>$DateTime<\/td><\/tr>" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-        wget https://raw.githubusercontent.com/liwenjie119/packages/dev/net/openssh/patches/0001-fix-root-login.patch -P ./feeds/packages/net/openssh/patches
+        wget https://usercontent.githubfast.com/raw/liwenjie119/packages/dev/net/openssh/patches/0001-fix-root-login.patch -P ./feeds/packages/net/openssh/patches
 
     - name: Get architecture
       working-directory: ${{ github.workspace }}/openwrt
